@@ -2,23 +2,29 @@
 
 namespace App\Presenters;
 
-use Nette\Application\UI\Form;
+use Nette\Application\UI\Form,
+		V108B\NetteBSForms;
 
 class RegistrationPresenter extends BasePresenter
 {
 
 	protected function createComponentForm()
 	{
-		$form = new Form();
+		$bsform = new NetteBSForms\BSForm('Registration form');
+		$form = $bsform['form'];
+		$form->addGroup('');
 
-		$em = $this->em;
+		//$em = $this->em;
 		$form->addText('username', 'Username')
-			->setRequired('Username is required')
+			->setRequired('Username is required');
+		/*
 			->addCondition(Form::FILLED)
 				->addRule(function($control) use($em) {
 					$value = $control->value;
 					return $em->getRepository('User')->findOneByUsername($value) === NULL;
 				}, 'This username is already taken');
+		 * 
+		 */
 
 		$password1 = $form->addPassword('password', 'Password')
 			->setRequired('Fill in the password');
@@ -33,9 +39,9 @@ class RegistrationPresenter extends BasePresenter
 			->setRequired('Answer to the security question is required')
 			->addRule(Form::EQUAL, 'Bad answer', 'ghostbusters');
 
-		$form->addSubmit('submit', 'Register');
+		$form->addSubmit('submit', 'Register me!');
 		$form->onSuccess[] = array($this, 'submitForm');
-		return $form;
+		return $bsform;
 	}
 
 	public function submitForm(Form $form)
@@ -45,8 +51,8 @@ class RegistrationPresenter extends BasePresenter
 		$user->setAdmin(FALSE);
 		$user->setCredentials($values['username'], $values['password']);
 
-		$this->em->persist($user);
-		$this->em->flush();
+	//	$this->em->persist($user);
+	//	$this->em->flush();
 
 		$this->flashMessage('You were successfully registered.');
 		$this->redirect('Homepage:');
