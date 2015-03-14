@@ -33,11 +33,14 @@
 				</div>
 				<div class="navbar-collapse collapse">
 					<ul class="nav navbar-nav">
-						<li><a n:href="Admin:index">Administrace</a></li>
+						<li><a n:if="$user->isInRole('admin')" n:href="Admin:index">Administrace</a></li>
 					</ul>
-					<ul class="nav navbar-nav navbar-right">
+					<ul n:if="!$user->isLoggedIn()" class="nav navbar-nav navbar-right">
 						<li><a n:href="Sign:In">Sign In</a></li>
 						<li><a n:href="Registration:default">Register</a></li>
+					</ul>					
+					<ul n:if="$user->isLoggedIn()" class="nav navbar-nav navbar-right">
+						<li><a n:href="Sign:Out">Sign Out</a></li>
 					</ul>
 				</div>			
 			</div>

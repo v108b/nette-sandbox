@@ -19,7 +19,7 @@ class SignPresenter extends BasePresenter
 	 */
 	protected function createComponentSignInForm()
 	{
-		$bsform = new NetteBSForms\BSForm();
+		$bsform = new NetteBSForms\BSForm('Sign in');
 		$form = $bsform['form'];
 		$form->addGroup('');
 		$form->addText('username', 'Username:')
@@ -29,8 +29,7 @@ class SignPresenter extends BasePresenter
 			->setRequired('Please enter your password.');
 
 		$form->addCheckbox('remember', 'Keep me signed in');
-
-		$form->addSubmit('send', 'Sign in');
+		$form->addSubmit('submit', 'Sign in');
 
 		// call method signInFormSubmitted() on success
 		$form->onSuccess[] = $this->signInFormSubmitted;

@@ -44,16 +44,9 @@ class RegistrationPresenter extends BasePresenter
 		return $bsform;
 	}
 
-	public function submitForm(Form $form)
-	{
-		$values = $form->getValues();
-		$user = new \User();
-		$user->setAdmin(FALSE);
-		$user->setCredentials($values['username'], $values['password']);
-
-	//	$this->em->persist($user);
-	//	$this->em->flush();
-
+	public function submitForm(Form $form, $values)
+	{			
+		$this->dbContext->userManager->add($values['username'], $values['password']);
 		$this->flashMessage('You were successfully registered.');
 		$this->redirect('Homepage:');
 	}

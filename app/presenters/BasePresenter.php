@@ -11,5 +11,8 @@ use Nette,
  */
 abstract class BasePresenter extends Nette\Application\UI\Presenter
 {
+	/** @var \App\Model\DBContext @inject */
+	public $dbContext;
+
 
 }
