@@ -1,6 +1,11 @@
 {block content}
 <h1 n:block=title>Sign in</h1>
-
-{control signInForm}
+<div class="row">
+<div class="col-md-6">
+	<div class="row">
+		{control signInForm clean}
+	</div>
+</div>
+</div>
 
 {* or use {include '../components/form.latte', form => signInForm} *}

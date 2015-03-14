@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "5e4f90065fe785e028a30aa233d06f67",
+    "hash": "5a45e57b95c7e641fb2df7812a0f55ae",
     "packages": [
         {
             "name": "dg/adminer-custom",
@@ -1312,6 +1312,46 @@
                 "nette"
             ],
             "time": "2015-02-24 21:00:38"
+        },
+        {
+            "name": "v108b/nette-bsforms",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/v108b/nette-bsforms.git",
+                "reference": "ff21525b26649f31041e8aecd31b321757fd0220"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/v108b/nette-bsforms/zipball/ff21525b26649f31041e8aecd31b321757fd0220",
+                "reference": "ff21525b26649f31041e8aecd31b321757fd0220",
+                "shasum": ""
+            },
+            "require": {
+                "nette/nette": "~2.2",
+                "php": ">=5.3.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "*@stable"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Martin Matousek",
+                    "email": "martin.matousek@gmail.com"
+                }
+            ],
+            "description": "Templates for Nette Forms using Twitter Bootstrap CSS framework",
+            "time": "2015-03-05 20:54:22"
         }
     ],
     "packages-dev": [
@@ -1374,7 +1414,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "v108b/nette-bsforms": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
