@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "5a45e57b95c7e641fb2df7812a0f55ae",
+    "hash": "20374b74a2cd71184711a292e153a549",
     "packages": [
         {
             "name": "dg/adminer-custom",
@@ -1319,12 +1319,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/v108b/nette-bsforms.git",
-                "reference": "ff21525b26649f31041e8aecd31b321757fd0220"
+                "reference": "fdc298b9dcba3e3fc833491123732535c2f71732"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/v108b/nette-bsforms/zipball/ff21525b26649f31041e8aecd31b321757fd0220",
-                "reference": "ff21525b26649f31041e8aecd31b321757fd0220",
+                "url": "https://api.github.com/repos/v108b/nette-bsforms/zipball/fdc298b9dcba3e3fc833491123732535c2f71732",
+                "reference": "fdc298b9dcba3e3fc833491123732535c2f71732",
                 "shasum": ""
             },
             "require": {
@@ -1351,7 +1351,81 @@
                 }
             ],
             "description": "Templates for Nette Forms using Twitter Bootstrap CSS framework",
-            "time": "2015-03-05 20:54:22"
+            "time": "2015-03-14 16:33:48"
+        },
+        {
+            "name": "v108b/nette-crud",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/v108b/nette-crud.git",
+                "reference": "d8886fc13192778345e8e1c1d03022aa18d3d9f7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/v108b/nette-crud/zipball/d8886fc13192778345e8e1c1d03022aa18d3d9f7",
+                "reference": "d8886fc13192778345e8e1c1d03022aa18d3d9f7",
+                "shasum": ""
+            },
+            "require": {
+                "nette/nette": "~2.2",
+                "php": ">=5.3.3"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Vaclav Juchelka",
+                    "email": "vjuchelka@gmail.com"
+                }
+            ],
+            "description": "Component factory to help making crud",
+            "time": "2015-03-05 18:47:25"
+        },
+        {
+            "name": "v108b/nette-modal",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/v108b/nette-modal.git",
+                "reference": "24d82ebd4eb0f5e26c6ef7137e96ee3b9cfe430a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/v108b/nette-modal/zipball/24d82ebd4eb0f5e26c6ef7137e96ee3b9cfe430a",
+                "reference": "24d82ebd4eb0f5e26c6ef7137e96ee3b9cfe430a",
+                "shasum": ""
+            },
+            "require": {
+                "nette/nette": "~2.2",
+                "php": ">=5.3.3"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Vaclav Juchelka",
+                    "email": "vjuchelka@gmail.com"
+                }
+            ],
+            "description": "Component for modal windows",
+            "time": "2015-03-05 14:39:20"
         }
     ],
     "packages-dev": [
@@ -1415,7 +1489,9 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "v108b/nette-bsforms": 20
+        "v108b/nette-bsforms": 20,
+        "v108b/nette-modal": 20,
+        "v108b/nette-crud": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
