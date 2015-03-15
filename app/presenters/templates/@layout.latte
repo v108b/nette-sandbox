@@ -21,11 +21,11 @@
 
 	<body>
 		<div n:foreach="$flashes as $flash" n:class="flash, $flash->type">{$flash->message}</div>
-		<div class="navbar navbar navbar-fixed-top">
+		<div class="navbar navbar-default navbar-fixed-top">
 			<div class="container">
 				<div class="navbar-header">
 					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>`						
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
@@ -33,12 +33,12 @@
 				</div>
 				<div class="navbar-collapse collapse">
 					<ul class="nav navbar-nav">
-						<li><a n:if="$user->isInRole('admin')" n:href="Admin:index">Administrace</a></li>
+						<li><a n:if="$user->isInRole('spravce')" n:href="Admin:index">Administrace</a></li>
 					</ul>
 					<ul n:if="!$user->isLoggedIn()" class="nav navbar-nav navbar-right">
 						<li><a n:href="Sign:In">Sign In</a></li>
 						<li><a n:href="Registration:default">Register</a></li>
-					</ul>					
+					</ul>								
 					<ul n:if="$user->isLoggedIn()" class="nav navbar-nav navbar-right">
 						<li><a n:href="Sign:Out">Sign Out</a></li>
 					</ul>

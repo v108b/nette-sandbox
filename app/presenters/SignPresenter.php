@@ -12,15 +12,15 @@ V108B\NetteBSForms;
 class SignPresenter extends BasePresenter
 {
 
-	
+
 	/**
 	 * Sign-in form factory.
 	 * @return Nette\Application\UI\Form
 	 */
-	protected function createComponentSignInForm()
-	{
-		$bsform = new NetteBSForms\BSForm('Sign in');
-		$form = $bsform['form'];
+
+
+	public function createComponentSignInForm() {
+		$form = new UI\Form();
 		$form->addGroup('');
 		$form->addText('username', 'Username:')
 			->setRequired('Please enter your username.');
@@ -33,14 +33,15 @@ class SignPresenter extends BasePresenter
 
 		// call method signInFormSubmitted() on success
 		$form->onSuccess[] = $this->signInFormSubmitted;
-		return $bsform;
+		
+		return $form;
 	}
-
-
-
+	
 	public function signInFormSubmitted($form)
 	{
+		
 		$values = $form->getValues();
+		\Tracy\Debugger::barDump($form);
 
 		if ($values->remember) {
 			$this->getUser()->setExpiration('+ 14 days', FALSE);

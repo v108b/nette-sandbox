@@ -1,17 +1,14 @@
 <?php
-
 namespace App\Presenters;
 
 use Nette\Application\UI\Form,
-		V108B\NetteBSForms;
+	V108B\NetteBSForms;
 
 class RegistrationPresenter extends BasePresenter
 {
 
-	protected function createComponentForm()
-	{
-		$bsform = new NetteBSForms\BSForm('Registration form');
-		$form = $bsform['form'];
+	public function beforeRender() {	
+		$form = new \Nette\Application\UI\Form();
 		$form->addGroup('');
 
 		//$em = $this->em;
@@ -35,13 +32,14 @@ class RegistrationPresenter extends BasePresenter
 		$password2->addCondition(Form::FILLED)
 			->addRule(Form::EQUAL, 'Passwords do not match', $password1);
 
-		$form->addText('captcha', 'Who you gonna call!?')
-			->setRequired('Answer to the security question is required')
-			->addRule(Form::EQUAL, 'Bad answer', 'ghostbusters');
+		$form->addText('captcha', 'Who you gonna call!? (v108b)')
+			->setRequired('Answer to the security question is required')				
+			->addRule(Form::EQUAL, 'Bad answer', 'v108b');
 
-		$form->addSubmit('submit', 'Register me!');
-		$form->onSuccess[] = array($this, 'submitForm');
-		return $bsform;
+		$form->addSubmit('submit', 'Register me!');		
+		$form->onSuccess[] = $this->submitForm;
+		
+		$this->template->registrationForm = $form;		
 	}
 
 	public function submitForm(Form $form, $values)
