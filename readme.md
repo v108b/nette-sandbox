@@ -18,8 +18,9 @@ Todo
 ----------
 - Authorizator
 - CRUD component for Rapid Prototyping
-- Grid example
+- Grid component to use in Administration module
 - Administration module to set Athorizator
+- Captcha mechanism when registering new user
 
 Discussion
 -----------
