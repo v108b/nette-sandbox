@@ -1,4 +1,4 @@
-Nette Sandbox
+v108b nette-sandbox
 =============
 
 Sandbox is a pre-packaged and pre-configured Nette Framework application
@@ -8,14 +8,30 @@ that you can use as the skeleton for your new applications.
 It is designed to be the most usable and friendliest as possible. It focuses
 on security and performance and is definitely one of the safest PHP frameworks.
 
+Features
+----------
+- Twitter Bootstrap templates
+- BSForms component for Twitter bootstrap forms
+- Authenticator
+
+Todo
+----------
+- Authorizator
+- CRUD component for Rapid Prototyping
+- Grid example
+- Administration module to set Athorizator
+
+Discussion
+-----------
+- Separate sandbox to Front and Admin modules?
 
 Installing
 ----------
 
-The best way to install Sandbox is using Composer. If you don't have Composer yet, download
+The best way to install v108b Sandbox is using Composer. If you don't have Composer yet, download
 it following [the instructions](http://doc.nette.org/composer). Then use command:
 
-		composer create-project nette/sandbox my-app
+		composer create-project v108b/nette-sandbox my-app
 		cd my-app
 
 Make directories `temp` and `log` writable. Navigate your browser
