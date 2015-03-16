@@ -6,8 +6,7 @@ use Nette\Application\UI\Form,
 
 class RegistrationPresenter extends BasePresenter
 {
-
-	public function beforeRender() {	
+	public function createComponentRegistrationForm() {
 		$form = new \Nette\Application\UI\Form();
 		$form->addGroup('');
 
@@ -39,7 +38,13 @@ class RegistrationPresenter extends BasePresenter
 		$form->addSubmit('submit', 'Register me!');		
 		$form->onSuccess[] = $this->submitForm;
 		
-		$this->template->registrationForm = $form;		
+		return $form;
+	
+	}
+	
+	public function beforeRender() {	
+		
+		
 	}
 
 	public function submitForm(Form $form, $values)
