@@ -15,6 +15,9 @@ class HomepagePresenter extends BasePresenter
 	public function renderDefault()
 	{
 		$this->template->anyVariable = 'any value';		
+		
+		\Tracy\Debugger::barDump($this->user->roles);
+		\Tracy\Debugger::barDump($this->user->getRoles());
 	}
 
 }

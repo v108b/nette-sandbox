@@ -20,7 +20,11 @@ session:
 
 
 services:
-	- App\Model\DBContext
 	- App\Model\UserManager
+	- App\Model\DBContext	
 	- App\Forms\SignFormFactory
+
+#	authentikator: App\Model\UserManager
 	router: App\RouterFactory::createRouter
+
+

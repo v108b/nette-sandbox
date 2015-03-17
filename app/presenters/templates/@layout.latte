@@ -10,8 +10,8 @@
 
 		<title>{ifset title}{include title|striptags} | {/ifset}Nette Sandbox</title>
 
-		<link href="{$basePath}/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
-		<link href="{$basePath}/lib/bootstrap/css/bootstrap-theme-amelia.min.css" rel="stylesheet"/>
+		<link href="{$basePath}/lib/bootstrap/css/bootstrap.css" rel="stylesheet"/>
+		<link href="{$basePath}/lib/bootstrap/css/bootstrap-theme-slate.min.css" rel="stylesheet"/>
 		<link href="{$basePath}/lib/bootstrap-fileinput/bootstrap-fileinput.css" rel="stylesheet"/>
 		<link href="{$basePath}/lib/bootstrap-datepicker/css/datepicker3.css" rel="stylesheet"/>
 		<link rel="stylesheet" href="{$basePath}/css/layout.css">
@@ -33,7 +33,7 @@
 				</div>
 				<div class="navbar-collapse collapse">
 					<ul class="nav navbar-nav">
-						<li><a n:if="$user->isInRole('spravce')" n:href="Admin:index">Administrace</a></li>
+						<li><a n:if="$user->isInRole('owner')" n:href="Admin:index">Administrace</a></li>
 					</ul>
 					<ul n:if="!$user->isLoggedIn()" class="nav navbar-nav navbar-right">
 						<li><a n:href="Sign:In">Sign In</a></li>
