@@ -4,7 +4,6 @@
 #
 parameters:
 
-
 php:
 	date.timezone: Europe/Prague
 
@@ -14,16 +13,18 @@ application:
 	mapping:
 		*: App\*Module\Presenters\*Presenter
 
-
 session:
 	expiration: 14 days
-
+	savePath: "%tempDir%/sessions"
 
 services:
 	- App\Model\UserManager
 	- App\Model\DBContext	
 	- App\Forms\SignFormFactory
+	- App\Model\Acl
+	crud: V108B\NetteCrud\Extension 
 
+	
 #	authentikator: App\Model\UserManager
 	router: App\RouterFactory::createRouter
 

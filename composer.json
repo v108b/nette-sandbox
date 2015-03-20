@@ -1,6 +1,6 @@
 {
 	"name": "v108b/nette-sandbox",
-	"description": "Form Component for Nette Framework with Twitter Bootstrap templates.",	
+	"description": "Nette application template for rapid development",	
 	"type": "project",
 	"license": ["MIT"],
 	"authors": [
@@ -17,9 +17,11 @@
 		"php": ">= 5.3.7",
 		"nette/nette": "~2.3.0",
 		"dg/adminer-custom": "~1.6",
-		"v108b/nette-bsforms": "@dev",
-		"v108b/nette-modal": "@dev",
-		"v108b/nette-crud": "@dev"		
+	    "v108b/nette-acl": "@dev",
+		"v108b/nette-bsforms": "@dev",		
+		"v108b/nette-crud": "@dev",
+		"v108b/nette-modal": "@dev"		
+		
 	},
 	"require-dev": {
 		"nette/tester": "~1.3"

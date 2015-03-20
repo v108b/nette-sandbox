@@ -3,7 +3,6 @@
 namespace App\Model;
 
 use Nette,
-	Nette\Utils\Strings,
 	Nette\Security\Passwords;
 
 
@@ -14,7 +13,7 @@ class UserManager extends Nette\Object implements Nette\Security\IAuthenticator
 {
 	const
 		TABLE_NAME = 'users',
-		COLUMN_ID = 'Id',
+		COLUMN_ID = 'id',
 		COLUMN_NAME = 'username',
 		COLUMN_PASSWORD_HASH = 'password',
 		COLUMN_ROLE = 'role';
@@ -24,9 +23,9 @@ class UserManager extends Nette\Object implements Nette\Security\IAuthenticator
 	private $db;
 
 
-	public function __construct(Nette\Database\Context $database)
+	public function __construct(Nette\Database\Context $db)
 	{
-		$this->db = $database;
+		$this->db = $db;
 	}
 
 
@@ -56,10 +55,17 @@ class UserManager extends Nette\Object implements Nette\Security\IAuthenticator
 		$arr = $row->toArray();
 		unset($arr[self::COLUMN_PASSWORD_HASH]);
 		
-		return new Nette\Security\Identity($row[self::COLUMN_ID], explode(',', $row[self::COLUMN_ROLE]), $arr);
+		$roles = $this->getRoles($row['id']);		
+		
+		return new Nette\Security\Identity($row[self::COLUMN_ID], $roles, $arr);
 	}
-
-
+	
+	public function getRoles($userid) {
+		$roles = $this->db->table('userroles')->where('userid = ?', $userid)->fetchPairs(null, 'role');
+		$roles[] = 'guest';
+		return $roles;
+	}
+	
 	/**
 	 * Adds new user.
 	 * @param  string
@@ -69,7 +75,7 @@ class UserManager extends Nette\Object implements Nette\Security\IAuthenticator
 	public function add($username, $password)
 	{
 		try {
-			$this->database->table(self::TABLE_NAME)->insert(array(
+			$this->db->table(self::TABLE_NAME)->insert(array(
 				self::COLUMN_NAME => $username,
 				self::COLUMN_PASSWORD_HASH => Passwords::hash($password),
 			));
