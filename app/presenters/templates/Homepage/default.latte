@@ -1,40 +1,43 @@
 {block content}
-<h1>v108b-sandbox</h1>
-<h2>Themes</h2>
-Change your App style by bootstrap themes:
-<a href='https://bootswatch.com/slate/'>https://bootswatch.com/slate/</a>
-<ul>
-	<li>Slate (bootstrap-theme-superhero.css )</li>
-	<li>Superhero (bootstrap-theme-slate.css )</li>
-	<li>Lumen (bootstrap-theme-lumen.css )</li>
-	<li>Ameli (bootstrap-theme-amelia.css )</li>
-</ul>
-
-<h2>Account management</h2>
-<ul><li>First registered user is automatically set as Admin</li></ul>
-
-<h2>Authorization</h2>
-<p>Predefined Roles are:</p>
-<dl class="dl-horizontal">
-	<dt>admin</dt>
-	<dd>Application administrator</dd>
-	<dt>owner</dt>
-	<dd>Application owner</dd>
-	<dt>member</dt>
-	<dd>Application administrator</dd>
-	<dt>user</dt>
-	<dd>Application administrator</dd>
-	
-	
-
-</dl>
-
-<h2>DB Management</h2>
-<ul><li>Adminer your database by <a href="/adminer">Adminer</a></li></ul>
-
-<h2></h2>
-<a href="{$presenter['modalWindow']['crudView']->link('insert!', 'users')}">Modal</a>
+    <h1>v108b-sandbox</h1>
+    <h2>Themes</h2>
+    Change your App style by bootstrap themes:
+    <a href='https://bootswatch.com/slate/'>https://bootswatch.com/slate/</a>
+    <ul>
+        <li>Slate (bootstrap-theme-superhero.css )</li>
+        <li>Superhero (bootstrap-theme-slate.css )</li>
+        <li>Lumen (bootstrap-theme-lumen.css )</li>
+        <li>Ameli (bootstrap-theme-amelia.css )</li>
+    </ul>
+    <h2>Account management</h2>
+    <ul>
+        <li>First registered user is automatically set as Admin</li>
+    </ul>
+    <h2>Authorization</h2>
+    <p>Predefined Roles are:</p>
+    <dl class="dl-horizontal">
+        <dt>admin</dt>
+        <dd>Application administrator</dd>
+        <dt>owner</dt>
+        <dd>Application owner</dd>
+        <dt>member</dt>
+        <dd>Application administrator</dd>
+        <dt>user</dt>
+        <dd>Application administrator</dd>
 
 
-
+    </dl>
+    <h2>DB Management</h2>
+    <ul>
+        <li>Adminer your database by <a href="/adminer">Adminer</a></li>
+    </ul>
+    <h2>CRUD component with modal window</h2>
+    <ul>
+        <li>
+            <a href="{$presenter['modalWindow']['crudView']->link('insert!', 'users')}">Create new user</a>
+        </li>
+        <li>
+            <a href="{$presenter['modalWindow']['crudView']->link('update!', 'users', 2)}">Edit user with id 2</a>
+        </li>
+    </ul>
 {/block}

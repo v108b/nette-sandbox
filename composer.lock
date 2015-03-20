@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "8c11d4689da918560a4f8716b7e5660c",
+    "hash": "cbf5082d67f8b3132151ac140842add9",
     "packages": [
         {
             "name": "dg/adminer-custom",
@@ -1319,12 +1319,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/v108b/nette-acl.git",
-                "reference": "7a367824a4dd69e5d357c02a77023130134a59be"
+                "reference": "c8bdffa4a4632cac2554cdbd0aa789f64df567f6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/v108b/nette-acl/zipball/7a367824a4dd69e5d357c02a77023130134a59be",
-                "reference": "7a367824a4dd69e5d357c02a77023130134a59be",
+                "url": "https://api.github.com/repos/v108b/nette-acl/zipball/c8bdffa4a4632cac2554cdbd0aa789f64df567f6",
+                "reference": "c8bdffa4a4632cac2554cdbd0aa789f64df567f6",
                 "shasum": ""
             },
             "require": {
@@ -1335,6 +1335,11 @@
                 "nette/tester": "~1.3"
             },
             "type": "project",
+            "autoload": {
+                "classmap": [
+                    "src"
+                ]
+            },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
@@ -1350,7 +1355,7 @@
                 }
             ],
             "description": "Nette permission extension",
-            "time": "2015-03-19 09:57:02"
+            "time": "2015-03-20 07:27:13"
         },
         {
             "name": "v108b/nette-bsforms",

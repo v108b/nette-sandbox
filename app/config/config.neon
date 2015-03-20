@@ -21,7 +21,7 @@ services:
 	- App\Model\UserManager
 	- App\Model\DBContext	
 	- App\Forms\SignFormFactory
-	- App\Model\Acl
+	- App\Lib\Acl
 	crud: V108B\NetteCrud\Extension 
 
 	
