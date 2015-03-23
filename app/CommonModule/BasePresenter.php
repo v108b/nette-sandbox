@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Presenters;
+namespace App\CommonModule;
 
 use Nette,
 	App\Model,
@@ -22,7 +22,7 @@ abstract class BasePresenter extends Nette\Application\UI\Presenter implements \
 		
 		try {			
 			$acl = $this->context->getByType('App\Lib\Acl');
-			$acl->check($this->getResourceId(), $this->getAction());
+			//$acl->check($this->getResourceId(), $this->getAction());
 		} catch(\AclException $e) {
 			if (!$this->user->isLoggedIn() && $this->getAction(true) !== \V108B\Nette\Security\AclHelper::SIGN_IN_ACTION) {				
 				$this->redirect(\V108B\Nette\Security\AclHelper::SIGN_IN_ACTION);

@@ -1,6 +1,9 @@
 <?php
-namespace App\Presenters;
-class CrudPresenter extends BasePresenter {
+
+namespace App\CommonModule;
+
+class CrudPresenter extends \App\CommonModule\BasePresenter {
+
 	public function actionListTable($tableName)
 	{
 		$this['crudList'] = $this->getCrudExtenstion()->getComponents()->buildTableGrid($tableName);

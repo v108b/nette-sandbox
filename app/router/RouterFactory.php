@@ -19,8 +19,9 @@ class RouterFactory
 	 */
 	public static function createRouter()
 	{
-		$router = new RouteList();
-		$router[] = new Route('<presenter>/<action>[/<id>]', 'Homepage:default');
+		$router = new RouteList();		
+		$router[] = new Route('<presenter>/<action>[/<id>]', 'Public:Homepage:default');
+		$router[] = new Route('admin/<presenter>/<action>[/<id>]', 'Admin:Homepage:default');							
 		return $router;
 	}
 

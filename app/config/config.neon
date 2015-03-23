@@ -22,7 +22,13 @@ services:
 	- App\Model\DBContext	
 	- App\Forms\SignFormFactory
 	- App\Lib\Acl
-	crud: V108B\NetteCrud\Extension 
+	crud:
+		class: V108B\NetteCrud\Extension
+		setup:
+			- setExcludedFields([
+				id
+				users: [password]
+			])
 
 	
 #	authentikator: App\Model\UserManager

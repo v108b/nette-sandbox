@@ -1,0 +1,68 @@
+{**
+ * @param string   $basePath web base path
+ * @param array    $flashes  flash messages
+*}
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+
+		<title>{ifset title}{include title|striptags} | {/ifset}Nette Sandbox</title>
+
+		<link href="{$basePath}/lib/bootstrap/css/bootstrap.css" rel="stylesheet"/>
+		<link href="{$basePath}/lib/bootstrap/css/bootstrap-theme-slate.min.css" rel="stylesheet"/>
+		<link href="{$basePath}/lib/bootstrap-fileinput/bootstrap-fileinput.css" rel="stylesheet"/>
+		<link href="{$basePath}/lib/bootstrap-datepicker/css/datepicker3.css" rel="stylesheet"/>
+		<link rel="stylesheet" href="{$basePath}/css/layout.css">
+		<link rel="shortcut icon" href="{$basePath}/favicon.ico">
+		{block head}{/block}
+	</head>
+
+	<body>
+		{ifset $presenter['modalWindow']}
+			{control modalWindow}
+		{/ifset}		
+		<div n:foreach="$flashes as $flash" n:class="flash, $flash->type">{$flash->message}</div>
+		<div class="navbar navbar-default navbar-fixed-top">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+						<span class="icon-bar"></span>`						
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a n:href="Homepage:default" class="navbar-brand">SandBox</a>
+				</div>
+				<div class="navbar-collapse collapse">
+					<ul class="nav navbar-nav">
+						<li><a n:if="$user->isInRole('root')" n:href=":Admin:Homepage:">Administrace</a></li>
+					</ul>
+					<ul n:if="!$user->isLoggedIn()" class="nav navbar-nav navbar-right">
+						<li><a n:href=":Sign:In">Sign In</a></li>
+						<li><a n:href=":Sign:Up">Register</a></li>
+					</ul>								
+					<ul n:if="$user->isLoggedIn()" class="nav navbar-nav navbar-right">
+						<li><a n:href=":Sign:Out">Sign Out</a></li>
+					</ul>
+				</div>			
+			</div>
+		</div>
+		<div class="container body-content">
+			{include content}
+			<hr />
+			<footer>
+				<p>&copy; 2015 SandBox by v108b</p>
+			</footer>
+		</div>
+
+		{block scripts}
+		<script src="{$basePath}/lib/jquery/jquery.min.js" type="text/javascript"></script>	
+		<script src="{$basePath}/lib/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>	
+		<script src="{$basePath}/js/netteForms.min.js" type="text/javascript"></script>	
+		<script src="{$basePath}/js/main.js"></script>
+		{/block}
+	</body>
+</html>
+
+

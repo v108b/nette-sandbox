@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Presenters;
+namespace App\PublicModule\Presenters;
 
 use 
 	\Nette\Application\UI,
@@ -11,7 +11,7 @@ use
 /**
  * Sign in/out presenters.
  */
-class SignPresenter extends BasePresenter
+class SignPresenter extends \App\CommonModule\BasePresenter
 {
 
 

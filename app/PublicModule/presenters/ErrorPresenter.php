@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Presenters;
+namespace App\CommonModule\Presenters;
 
 use Nette,
 	App\Model,
@@ -10,7 +10,7 @@ use Nette,
 /**
  * Error presenter.
  */
-class ErrorPresenter extends BasePresenter
+class ErrorPresenter extends \App\CommonModule\BasePresenter
 {
 	/** @var ILogger */
 	private $logger;

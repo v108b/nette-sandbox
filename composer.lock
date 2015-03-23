@@ -1403,12 +1403,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/v108b/nette-crud.git",
-                "reference": "f81090a9a81e29dccf7779201877b58048c4e52b"
+                "reference": "bab66f686d3f7f58dd75160c7189d8fac13e1e6a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/v108b/nette-crud/zipball/f81090a9a81e29dccf7779201877b58048c4e52b",
-                "reference": "f81090a9a81e29dccf7779201877b58048c4e52b",
+                "url": "https://api.github.com/repos/v108b/nette-crud/zipball/bab66f686d3f7f58dd75160c7189d8fac13e1e6a",
+                "reference": "bab66f686d3f7f58dd75160c7189d8fac13e1e6a",
                 "shasum": ""
             },
             "require": {
@@ -1433,7 +1433,7 @@
                 }
             ],
             "description": "Component factory to help making crud",
-            "time": "2015-03-17 11:51:29"
+            "time": "2015-03-20 08:37:42"
         },
         {
             "name": "v108b/nette-modal",
