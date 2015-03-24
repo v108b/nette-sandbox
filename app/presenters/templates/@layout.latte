@@ -10,8 +10,7 @@
 
 		<title>{ifset title}{include title|striptags} | {/ifset}Nette Sandbox</title>
 
-		<link href="{$basePath}/lib/bootstrap/css/bootstrap.css" rel="stylesheet"/>
-		<link href="{$basePath}/lib/bootstrap/css/bootstrap-theme-slate.min.css" rel="stylesheet"/>
+		<link href="{$basePath}/lib/bootstrap/css/bootstrap.css" rel="stylesheet"/>		
 		<link href="{$basePath}/lib/bootstrap-fileinput/bootstrap-fileinput.css" rel="stylesheet"/>
 		<link href="{$basePath}/lib/bootstrap-datepicker/css/datepicker3.css" rel="stylesheet"/>
 		<link rel="stylesheet" href="{$basePath}/css/layout.css">
@@ -36,14 +35,14 @@
 				</div>
 				<div class="navbar-collapse collapse">
 					<ul class="nav navbar-nav">
-						<li><a n:if="$user->isInRole('root')" n:href=":Admin:Homepage:">Administrace</a></li>
+						<li><a n:if="$user->isInRole('root')" n:href="Admin:">Administrace</a></li>
 					</ul>
 					<ul n:if="!$user->isLoggedIn()" class="nav navbar-nav navbar-right">
-						<li><a n:href=":Public:Sign:In">Sign In</a></li>
-						<li><a n:href=":Public:Sign:Up">Register</a></li>
+						<li><a n:href="Sign:In">Sign In</a></li>
+						<li><a n:href="Sign:Up">Register</a></li>
 					</ul>								
 					<ul n:if="$user->isLoggedIn()" class="nav navbar-nav navbar-right">
-						<li><a n:href=":Public:Sign:Out">Sign Out</a></li>
+						<li><a n:href="Sign:Out">Sign Out</a></li>
 					</ul>
 				</div>			
 			</div>

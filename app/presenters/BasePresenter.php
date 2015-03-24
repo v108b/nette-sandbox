@@ -1,6 +1,6 @@
 <?php
 
-namespace App\CommonModule;
+namespace App\Presenters;
 
 use Nette,
 	App\Model,
@@ -18,14 +18,14 @@ abstract class BasePresenter extends Nette\Application\UI\Presenter implements \
 	
 	public function startup() {
 
-		parent::startup();
+		parent::startup();				
 		
 		try {			
-			$acl = $this->context->getByType('App\Lib\Acl');
-			//$acl->check($this->getResourceId(), $this->getAction());
+			$acl = $this->context->getByType('App\Acl');
+			$acl->check($this->getResourceId(), $this->getAction());
 		} catch(\AclException $e) {
-			if (!$this->user->isLoggedIn() && $this->getAction(true) !== \V108B\Nette\Security\AclHelper::SIGN_IN_ACTION) {				
-				$this->redirect(\V108B\Nette\Security\AclHelper::SIGN_IN_ACTION);
+			if (!$this->user->isLoggedIn() && $this->getAction(true) !== \App\Acl::SIGN_IN_ACTION) {				
+				$this->redirect(\App\Acl::SIGN_IN_ACTION);
 			} else {
 				throw $e;
 			}
@@ -45,7 +45,6 @@ abstract class BasePresenter extends Nette\Application\UI\Presenter implements \
 	{
 		return new \V108B\NetteCrud\Components\ModalWindow();
 	}
-	
 
 }
 

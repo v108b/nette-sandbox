@@ -7,7 +7,6 @@ use Nette,
 	Nette\Application\Routers\Route,
 	Nette\Application\Routers\SimpleRouter;
 
-
 /**
  * Router factory.
  */
@@ -19,9 +18,9 @@ class RouterFactory
 	 */
 	public static function createRouter()
 	{
-		$router = new RouteList();		
-		$router[] = new Route('<presenter>/<action>[/<id>]', 'Public:Homepage:default');
-		$router[] = new Route('admin/<presenter>/<action>[/<id>]', 'Admin:Homepage:default');							
+		$router = new RouteList(); 	
+		$router[] = new Route('<presenter>/<action>[/<id>]', 'Homepage:default');						
+		
 		return $router;
 	}
 

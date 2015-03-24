@@ -1,6 +1,6 @@
 <?php
 
-namespace App\CommonModule;
+namespace App\Presenters;
 
 use Nette,
 	App\Model;
@@ -9,7 +9,7 @@ use Nette,
 /**
  * Homepage presenter.
  */
-class AccountPresenter extends \App\CommonModule\BasePresenter
+class AccountPresenter extends BasePresenter
 {
 
 	public function renderDefault()

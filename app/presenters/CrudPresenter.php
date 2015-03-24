@@ -1,8 +1,8 @@
 <?php
 
-namespace App\CommonModule;
+namespace App\Presenters;
 
-class CrudPresenter extends \App\CommonModule\BasePresenter {
+class CrudPresenter extends BasePresenter {
 
 	public function actionListTable($tableName)
 	{

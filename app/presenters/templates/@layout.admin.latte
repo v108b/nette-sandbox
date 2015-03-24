@@ -32,18 +32,18 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a n:href="Homepage:default" class="navbar-brand">SandBox</a>
+					<a n:href="Homepage:default" class="navbar-brand">Sandbox</a>
 				</div>
 				<div class="navbar-collapse collapse">
 					<ul class="nav navbar-nav">
-						<li><a n:if="$user->isInRole('root')" n:href=":Admin:Homepage:">Administrace</a></li>
+						<li><a n:if="$user->isInRole('root')" n:href="Admin:">Users</a></li>
 					</ul>
 					<ul n:if="!$user->isLoggedIn()" class="nav navbar-nav navbar-right">
-						<li><a n:href=":Public:Sign:In">Sign In</a></li>
-						<li><a n:href=":Public:Sign:Up">Register</a></li>
+						<li><a n:href="Sign:In">Sign In</a></li>
+						<li><a n:href="Sign:Up">Register</a></li>
 					</ul>								
 					<ul n:if="$user->isLoggedIn()" class="nav navbar-nav navbar-right">
-						<li><a n:href=":Public:Sign:Out">Sign Out</a></li>
+						<li><a n:href="Sign:Out">Sign Out</a></li>
 					</ul>
 				</div>			
 			</div>
