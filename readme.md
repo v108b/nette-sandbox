@@ -32,7 +32,7 @@ Installing
 The best way to install v108b Sandbox is using Composer. If you don't have Composer yet, download
 it following [the instructions](http://doc.nette.org/composer). Then use command:
 
-		composer create-project v108b/nette-sandbox my-app
+		composer create-project v108b/nette-sandbox=dev-master my-app
 		cd my-app
 
 Make directories `temp` and `log` writable. Navigate your browser
